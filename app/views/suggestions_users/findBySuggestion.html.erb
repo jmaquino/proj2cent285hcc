@@ -1,0 +1,8 @@
+<% @users = @suggestionsusers.collect {|u| u.last_name}.join ', ' %>
+<% @suggestion = @suggestionsusers.first.suggestion %>
+<table border = "1">
+  <tr>
+    <td><%= @users %></td><td><%= @suggestion %></td>
+  </tr>
+</table>
+

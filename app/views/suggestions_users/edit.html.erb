@@ -1,0 +1,10 @@
+<!-- app/views/suggestions_users/edit.html.erb -->
+<h2>Edit Suggestion</h2>
+<% if cookies.signed[:DivAdmin] %>
+  <%= form_for @suggestions, :url => { :action => "update" } do |f| %>
+    <%= f.label "Suggestion: " %>
+    <%= f.text_field :suggestion %><br />
+    <%= f.hidden_field :id %><br />
+    <%= f.submit "Submit" %>
+  <% end %>
+<% end %>

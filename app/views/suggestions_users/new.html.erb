@@ -1,0 +1,23 @@
+<!-- app/views/suggestions_users/new.html.erb -->
+<h2>New suggestions_users</h2>
+<% if cookies.signed[:DivAdmin] %>
+  <%= form_for :suggestions_user, :url => { :action => "create" } do |f| %>
+    <%= f.label "Submitter's username: " %>
+    <%= f.text_field :username %><br />
+    <%= f.label "Submitter's name: " %>
+    <%= f.text_field :name %><br />
+    <%= f.label "Submitter's division: " %>
+    <%= f.text_field :division %><br />
+    <%= f.label "Submitter's department: " %>
+    <%= f.text_field :department %><br />
+    <%= f.label "Submitter's password: " %>
+    <%= f.text_field :password %><br />
+    <%= f.label "Suggestor's first name: " %>
+    <%= f.text_field :first_name %><br />
+    <%= f.label "Suggestor's last name: " %>
+    <%= f.text_field :last_name %><br />
+    <%= f.label "Suggestion: " %>
+    <%= f.text_field :suggestion %><br />
+    <%= f.submit "Submit" %>
+  <% end %>
+<% end %>

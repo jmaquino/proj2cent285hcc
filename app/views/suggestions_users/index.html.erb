@@ -1,0 +1,17 @@
+<!-- app/views/suggestions_users/index.html.erb -->
+<table border='1'>
+  <% @suggestions.each do |ab| %>
+      <tr>
+        <td><%= ab.first_name %> <%= ab.last_name %></td>
+        <td><%= ab.suggestion %></td>
+        <td><%= ab.created_at %></td>
+        <td><%= ab.updated_at %></td>
+      </tr>
+  <% end %>
+</table>
+<% if cookies.signed[:DivAdmin] %>
+  <%= link_to "Add new suggestion", :controller => "suggestions_users",
+    :action => "new" %>
+  <%= link_to "Edit suggestion", :controller => "suggestions_users",
+    :action => "chooseSuggestion" %>
+<% end %>

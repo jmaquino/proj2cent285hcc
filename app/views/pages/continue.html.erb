@@ -1,0 +1,14 @@
+<!-- app/views/pages/continue.html.erb -->
+<% if cookies.signed[:DivAdmin] %>
+  <h2>You are logged in as Admin</h2>
+  <%= link_to "User index", :controller => "users", :action => "index" %>
+  <%= link_to "New User", :controller => "users", :action => "new" %>
+  <%= link_to "Edit User", :controller => "users", :action => "chooseUser" %><br>
+  <%= link_to "Suggestion index", :controller => "suggestions_users", :action => "index" %>
+  <%= link_to "New Suggestion", :controller => "suggestions_users", :action => "new" %>
+  <%= link_to "Edit Suggestion", :controller => "suggestions_users", :action => "chooseSuggestion" %>
+<% else %>
+  <h2>You are logged in as Normal User</h2>
+  <%= link_to "Main", :controller => "suggestions_users",
+    :action => "index" %>
+<% end %>
